@@ -1,39 +1,23 @@
 {
-  "homepage": "https://github.com/IwonaSr/todoapp#readme",
-  "bugs": {
-    "url": "https://github.com/bslipek/angularcourse/issues"
-  },
-  "name": "workspace",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
-    "start": "node node_modules/.bin/webpack-dev-server --host=0.0.0.0 --content-base app",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node node_modules/.bin/webpack-dev-server --host=0.0.0.0 --content-base app"
   },
-  "repository": {
-    "url": "git+https://github.com/IwonaSr/todoapp.git",
-    "type": "git"
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-ui-router": "^0.2.18",
+    "bootstrap": "^3.3.6",
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
-    "angularfire": "^1.2.0",
     "babel-core": "^6.5.2",
     "babel-loader": "^6.2.3",
     "babel-preset-es2015": "^6.5.0",
     "babel-preset-stage-2": "^6.5.0",
     "css-loader": "^0.23.1",
     "file-loader": "^0.8.5",
-    "firebase": "^2.4.2",
-    "html-loader": "^0.4.3",
     "style-loader": "^0.13.0",
-    "webpack": "^1.12.14",
+    "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
-  },
-  "dependencies": {
-    "angular": "^1.5.2",
-    "angular-ui-router": "^0.2.18",
-    "bootstrap": "^3.3.6"
   }
 }
