@@ -1,10 +1,18 @@
 export default class HomeController {
-  constructor() {
-    this.name = 'home';
+
+ constructor(HomeService) {
+ 
+    'use strict';
+    this.HomeService = HomeService;
+    this.email = HomeService.getEmailFromLocalStorage();
+  }
+
+  login() {
+    this.HomeService.saveEmailToLocalStorage(this.email);
   }
   
-  changeName() {
-     this.name = 'Przerwa!';
-   }
-
+  logout() {
+    this.email = null;
+    this.HomeService.saveEmailToLocalStorage(this.email);
+  }
 }

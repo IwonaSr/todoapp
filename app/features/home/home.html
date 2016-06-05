@@ -1,2 +1,62 @@
-<h1>{{home.name}}</h1>
-<button ng-click="home.changeName()">Change Name</button> 
+<!--<h1>{{home.name}}</h1>-->
+<!--<button ng-click="home.changeName()">Change Name</button> -->
+<form ng-submit="home.login()">
+  <div class="input-group input-group-lg">
+    <span class="input-group-addon" id="sizing-addon1">@</span>
+    <input ng-model="home.email" type="text" class="form-control" placeholder="Email address" aria-describedby="sizing-addon1">
+  </div>
+</form>
+
+<button ng-click="home.logout()">
+  Logout
+</button>
+
+<div class="form">
+  <div class="input-group">
+    <input type="text" class="form-control">
+    <span class="input-group-btn">
+      <button class="btn btn-default" type="button">
+        <span class="glyphicon glyphicon-plus"></span> Add Task</button>
+    </span>
+  </div>
+</div>
+<hr/>
+
+
+<ul class="list-group">
+  <li class="list-group-item clearfix task">
+    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua.</p>
+    <div>
+      <span class="pull-right">
+        <button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span></button>
+        <button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-ok"></span></button>
+        <button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-repeat"></span></button>
+        <button class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span></button>
+      </span>
+    </div>
+  </li>
+</ul>
+
+
+
+
+<!-- Task List Starts Here -->
+<!--<ul class="list-group" ng-show="tasks.length > 0">-->
+<!--  <li class="list-group-item clearfix task" ng-repeat="todo in tasks" ng-class="{disabled: todo.done}"> -->
+<!--    <p class="lead">{{home.name}}</p>-->
+<!--    <div>-->
+<!--      <span class="pull-right">-->
+<!--        <button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil" -->
+<!--          ng-click="editTask($index)"></span></button>-->
+<!--        <button class="btn btn-primary btn-xs" ng-show="!todo.done"><span class="glyphicon glyphicon-ok" -->
+<!--          ng-click="doneTask($index)"></span></button>-->
+<!--        <button class="btn btn-primary btn-xs" ng-show="todo.done"><span class="glyphicon glyphicon-repeat" -->
+<!--          ng-click="unDoneTask($index)"></span></button>-->
+<!--        <button class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove" -->
+<!--          ng-click="deleteTask($index)"></span></button>-->
+<!--      </span>-->
+<!--    </div>-->
+<!--  </li>-->
+<!--</ul>-->
+<!-- Task List Ends Here -->

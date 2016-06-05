@@ -1,3 +1,10 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
 <body ng-app="app">
 
   <nav class="navbar navbar-inverse">
@@ -6,12 +13,9 @@
         <a class="navbar-brand" href="#">ToDoApp</a>
       </div>
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Login</a></li>
-        <li>
-          <a href="#"></a>
-        </li>
-        <li><a href="#">Tasks</a></li>
-
+        <!--<li class="active"><a href="#">Tasks</a></li>-->
+        <li><a ui-sref="home">Home</a></li>
+        <li><a href="#">Login</a></li>
       </ul>
     </div>
   </nav>
@@ -19,6 +23,7 @@
   <div class="container">
     <h3>Basic Navbar Example</h3>
     <p>A navigation bar is a navigation header that is placed at the top of the page.</p>
+     <ui-view></ui-view>
   </div>
 
 
