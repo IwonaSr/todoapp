@@ -11,15 +11,19 @@
   Logout
 </button>
 
-<div class="form">
-  <div class="input-group">
-    <input type="text" class="form-control">
-    <span class="input-group-btn">
-      <button class="btn btn-default" type="button">
-        <span class="glyphicon glyphicon-plus"></span> Add Task</button>
-    </span>
-  </div>
-</div>
+<!--<div class="form">-->
+  <!--<div class="input-group">-->
+  <form id="todo-form" ng-submit="home.AddTask()">
+    <input id="new-todo" type="text" class="form-control" ng-model="home.title">
+       <span class="input-group-btn">
+						<button class="btn btn-default" type="button" ng-click="home.AddTask()"><span
+							class="glyphicon glyphicon-plus"></span> Add Task</button>
+					</span>
+ </form>
+    <!--</span>-->
+    
+<!--  </div>-->
+<!--</div>-->
 <hr/>
 
 
