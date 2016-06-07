@@ -1,9 +1,9 @@
 export default class HomeService {
-  constructor($q,$firebaseArray) {
-  		this.$q = $q;
+  constructor($firebaseArray) {
 		this.STORAGE_ID = 'todoapp-email';
 		this.email = this.getEmailFromLocalStorage();
 		this.firebaseArray = $firebaseArray;
+		this.todos = this.getDataFromFireBase();
 	}
   
 
@@ -15,21 +15,27 @@ export default class HomeService {
 		localStorage.setItem(this.STORAGE_ID, JSON.stringify(email));
 	}
 	
-	// connectToFireBase(completed,title) {
-	// 	let ref = new Firebase("https://popping-heat-8778.firebaseio.com/tasks");
-	// 	// return this.firebaseArray(ref);
-	// 	var messages = this.firebaseArray(ref);
-	// 	messages.$add({
-	// 		completed: true,
-	// 		owner: this.email,
-	// 		title: title
-	// 	});
-	// }
+	connectToFireBase(todo) {
+		let ref = new Firebase("https://popping-heat-8778.firebaseio.com/tasks");
+		// return this.firebaseArray(ref);
+		var messages = this.firebaseArray(ref);
+		messages.$add(todo);
+	}
 	
-	
+	getDataFromFireBase() {
+		let ref = new Firebase("https://popping-heat-8778.firebaseio.com/tasks");
+    	// return messages.$asArray();
+  //  	var tasks = ref.child("tasks");
+		// $tasks = new $firebaseArray(tasks);
+		// var newPost = ref.val();
+		// return newPost;
+		return this.firebaseArray(ref);
 
+    
+	}
 	
-		  
+	
+	  
 
 	
 	
