@@ -30,9 +30,25 @@ export default class HomeService {
 		// var newPost = ref.val();
 		// return newPost;
 		return this.firebaseArray(ref);
-
-    
 	}
+	
+	
+	updateFireBase(todo) {
+		let ref = new Firebase("https://popping-heat-8778.firebaseio.com/tasks");
+		// return this.firebaseArray(ref);
+		// var messages = this.firebaseArray(ref);
+		
+		// ref.update(tod); //przekazuje obiekt ale wyskakuje wyjatek
+		//przekazuje ale znowu exception
+		// var updatemessage =  this.firebaseArray(ref);
+		// updatemessage.$save(todo);
+		// console.log(updatemessage.$save(todo));
+	
+        this.todos.$save(todo);
+   
+	}
+	
+	
 	
 	
 	  

@@ -25,93 +25,55 @@
 <!--  </div>-->
 <!--</div>-->
 <hr/>
+
+<!--Dzialajace-->
 <ul class="list-group">
-  <li class="list-group-item clearfix task">
-    <p class="lead">{{home.todos}}</p>
+    <li ng-repeat="tod in home.todos | filter:statusFilter track by $index">
+    <p class="lead">{{tod.title}}</p>
     <div>
       <span class="pull-right">
         <button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span></button>
-        <button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-ok"></span></button>
-        <button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-repeat"></span></button>
-        <button class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span></button>
+				<button class="btn btn-primary btn-xs" ng-show="!home.completed"><span class="glyphicon glyphicon-ok" 
+								ng-click="home.doneTask(tod)"></span></button>
+      <button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-repeat"></span></button>
+      <button class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span></button>
       </span>
     </div>
   </li>
 </ul>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--<ul id="todo-group" ng-show="title.length > 0">-->
-				<!--<li class="list-group-item clearfix task" ng-repeat="home in tasks" ng-class="{disabled: home.done}"> -->
-<!--				 <li ng-repeat="task in tasks | filter:statusFilter track by $index">-->
-					<!--<p class="lead">{{home.GetTask()}}</p>-->
-<!--					<p class="lead">Dupa</p>-->
-<!--					<div>-->
-<!--						<span class="pull-right">-->
-<!--							<button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil" -->
-<!--								ng-click="editTask($index)"></span></button>-->
-<!--							<button class="btn btn-primary btn-xs" ng-show="!todo.done"><span class="glyphicon glyphicon-ok" -->
-<!--								ng-click="doneTask($index)"></span></button>-->
-<!--							<button class="btn btn-primary btn-xs" ng-show="todo.done"><span class="glyphicon glyphicon-repeat" -->
-<!--								ng-click="unDoneTask($index)"></span></button>-->
-<!--							<button class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove" -->
-<!--								ng-click="deleteTask($index)"></span></button>-->
-<!--						</span>-->
-<!--					</div>-->
-<!--				</li>-->
-<!--			</ul>-->
-
-
-
-<!--<ul id="todo-group">-->
-<!--  <li ng-repeat="tod in todos | filter:statusFilter track by $index">-->
-<!--    <p class="lead">TRESC STRONY </p>-->
+<!--Dzialajace-->
+<!--<ul class="list-group">-->
+<!--    <li ng-repeat="tod in home.todos | filter:statusFilter track by $index">-->
+<!--    <p class="lead">{{tod.title}}</p>-->
 <!--    <div>-->
 <!--      <span class="pull-right">-->
 <!--        <button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span></button>-->
-<!--        <button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-ok"></span></button>-->
-<!--        <button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-repeat"></span></button>-->
-<!--        <button class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span></button>-->
+<!--      <button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-ok"></span></button>-->
+<!--      <button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-repeat"></span></button>-->
+<!--      <button class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span></button>-->
 <!--      </span>-->
 <!--    </div>-->
 <!--  </li>-->
 <!--</ul>-->
 
 
+  	
 
 
-<!-- Task List Starts Here -->
-<!--<ul class="list-group" ng-show="tasks.length > 0">-->
-<!--  <li class="list-group-item clearfix task" ng-repeat="todo in tasks" ng-class="{disabled: todo.done}"> -->
-<!--    <p class="lead">{{home.name}}</p>-->
-<!--    <div>-->
-<!--      <span class="pull-right">-->
-<!--        <button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil" -->
-<!--          ng-click="editTask($index)"></span></button>-->
-<!--        <button class="btn btn-primary btn-xs" ng-show="!todo.done"><span class="glyphicon glyphicon-ok" -->
-<!--          ng-click="doneTask($index)"></span></button>-->
-<!--        <button class="btn btn-primary btn-xs" ng-show="todo.done"><span class="glyphicon glyphicon-repeat" -->
-<!--          ng-click="unDoneTask($index)"></span></button>-->
-<!--        <button class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove" -->
-<!--          ng-click="deleteTask($index)"></span></button>-->
-<!--      </span>-->
-<!--    </div>-->
-<!--  </li>-->
-<!--</ul>-->
-<!-- Task List Ends Here -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

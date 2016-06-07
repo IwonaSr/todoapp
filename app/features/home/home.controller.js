@@ -9,6 +9,7 @@ export default class HomeController {
     // this.$scope.todos = HomeService.todos;
     this.title = 'To do';
     this.todos = HomeService.todos; 
+    this.completed = false;
  }
   login() {
     this.HomeService.saveEmailToLocalStorage(this.email);
@@ -22,13 +23,15 @@ export default class HomeController {
   test() {
     alert('test2');
   }
+
+ //test  
+  // addTitle()
+  // {
+  //   return this.title;
+  // }
   
-  addTitle()
-  {
-    return this.title;
-  }
   
-  
+  //dziala
   AddTask()
   {
     var email = this.HomeService.getEmailFromLocalStorage();
@@ -46,21 +49,30 @@ export default class HomeController {
     }
   }
   
-  GetTask()
-  {
-    // this.data = this.HomeService.getDataFromFireBase();
-    alert(this.todos);
+  //niepotrzebne
+  // getTask()
+  // {
+  //   // this.data = this.HomeService.getDataFromFireBase();
+  //   alert(this.todos);
 
-  }
+  // }
+  
+  //do zrobienia
+  doneTask(todo)
+  {
+      todo.completed = true;
+      this.HomeService.updateFireBase(todo);
+      
+	}
   
   
   
-  
-  
-   login() {
+  //dziala
+  login() {
     this.HomeService.saveEmailToLocalStorage(this.email);
   }
   
+  //dziala
   logout() {
     this.email = null;
     this.HomeService.saveEmailToLocalStorage(this.email);
