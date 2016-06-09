@@ -28,7 +28,7 @@
 
 <!--Dzialajace-->
 <ul class="list-group">
-    <li ng-repeat="tod in home.todos | filter:statusFilter track by $index">
+    <li ng-repeat="tod in home.todos">
     <p class="lead">{{tod.title}}</p>
     <div>
       <span class="pull-right">
