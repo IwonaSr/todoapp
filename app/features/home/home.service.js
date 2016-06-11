@@ -7,7 +7,6 @@ export default class HomeService {
 		this.todos = this.getDataFromFireBase();
 	}
 	
-
 	getEmailFromLocalStorage() {
 		return localStorage.getItem(this.STORAGE_ID);
 	}
@@ -16,19 +15,20 @@ export default class HomeService {
 			localStorage.setItem(this.STORAGE_ID, email);
 	}
 	
-	connectToFireBase(todo) {
-		this.todos.$add(todo);
-	}
-	
 	getDataFromFireBase() {
 		let ref = new Firebase("https://popping-heat-8778.firebaseio.com/tasks");
 		return this.firebaseArray(ref);
 	}
 
-	
-	updateFireBase(todo) {
-	        this.todos.$save(todo);
+	addToFireBase(todo) {
+	    this.todos.$add(todo);
+   	}
+
+	updateInFireBase(todo) {
+	    this.todos.$save(todo);
    	}
 	
-	
+	removeFromFireBase(todo) {
+	    this.todos.$remove(todo);
+   	}
 }

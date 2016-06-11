@@ -1,79 +1,65 @@
 <!--<h1>{{home.name}}</h1>-->
 <!--<button ng-click="home.changeName()">Change Name</button> -->
-<form ng-submit="home.login()">
-  <div class="input-group input-group-lg">
-    <span class="input-group-addon" id="sizing-addon1">@</span>
-    <input ng-model="home.email" type="text" class="form-control" placeholder="Email address" aria-describedby="sizing-addon1">
-  </div>
-</form>
 
-<button ng-click="home.logout()">
+
+  <div>
+    <p>{{home.status}}</p>
+  </div>
+
+  <form ng-submit="home.status.login()">
+    <div class="input-group input-group-lg">
+      <span class="input-group-addon" id="sizing-addon1">@</span>
+      <input ng-model="home.email" type="text" class="form-control" placeholder="Email address" aria-describedby="sizing-addon1">
+    </div>
+  </form>
+
+  <button ng-click="home.status.logout()">
   Logout
 </button>
 
 <!--<div class="form">-->
-  <!--<div class="input-group">-->
-  <form id="todo-form" ng-submit="home.AddTask()">
-    <input id="new-todo" type="text" class="form-control" ng-model="home.title">
-       <span class="input-group-btn">
+<!--<div class="input-group">-->
+<form id="todo-form" ng-submit="home.AddTask()">
+  <input id="new-todo" type="text" class="form-control" ng-model="home.title">
+  <span class="input-group-btn">
 						<button class="btn btn-default" type="button" ng-click="home.AddTask()"><span
 							class="glyphicon glyphicon-plus"></span> Add Task</button>
-					</span>
- </form>
-    <!--</span>-->
-    
+  </span>
+</form>
+<!--</span>-->
+
 <!--  </div>-->
 <!--</div>-->
+</hr>
+
+<ul id="filters">
+  <li>
+    <a ng-class="home.applyFilter('all')" href="#/all">All</a>
+  </li>
+  <li>
+    <a ng-click="home.applyFilter('completed')" href="#/completed">Completed</a>
+  </li>
+  <li>
+    <a ng-click="home.applyFilter('uncompleted')" href="#/uncompleted">Uncompleted</a>
+  </li>
+  <li>
+    <a ng-click="home.applyFilter('mine')" href="#/mine">Mine</a>
+  </li>
+</ul>
 <hr/>
+
 
 <!--Dzialajace-->
 <ul class="list-group">
-    <li ng-repeat="tod in home.todos">
-    <p class="lead">{{tod.title}}</p>
+  <li ng-repeat="tod in home.todos| filter: home.statusFilter">
+    <p class="lead">{{tod.title }} {{tod.email}} {{tod.completed}}</p>
     <div>
       <span class="pull-right">
-        <button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span></button>
-				<button class="btn btn-primary btn-xs" ng-show="!home.completed"><span class="glyphicon glyphicon-ok" 
-								ng-click="home.doneTask(tod)"></span></button>
-      <button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-repeat"></span></button>
-      <button class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span></button>
+      <button class="btn btn-primary btn-xs" ng-show="!tod.completed"><span class="glyphicon glyphicon-ok" 
+								ng-click="home.finishTask(tod)"></span></button>
+      <button class="btn btn-danger btn-xs" ng-show="tod.email === home.email" ng-click="home.removeTask(tod)">
+        <span class="glyphicon glyphicon-remove"></span></button>
       </span>
     </div>
   </li>
 </ul>
-
-
-<!--Dzialajace-->
-<!--<ul class="list-group">-->
-<!--    <li ng-repeat="tod in home.todos | filter:statusFilter track by $index">-->
-<!--    <p class="lead">{{tod.title}}</p>-->
-<!--    <div>-->
-<!--      <span class="pull-right">-->
-<!--        <button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span></button>-->
-<!--      <button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-ok"></span></button>-->
-<!--      <button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-repeat"></span></button>-->
-<!--      <button class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span></button>-->
-<!--      </span>-->
-<!--    </div>-->
-<!--  </li>-->
-<!--</ul>-->
-
-
-  	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
