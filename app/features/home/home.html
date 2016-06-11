@@ -6,14 +6,14 @@
     <p>{{home.status}}</p>
   </div>
 
-  <form ng-submit="home.status.login()">
+  <form ng-submit="home.login()">
     <div class="input-group input-group-lg">
       <span class="input-group-addon" id="sizing-addon1">@</span>
       <input ng-model="home.email" type="text" class="form-control" placeholder="Email address" aria-describedby="sizing-addon1">
     </div>
   </form>
 
-  <button ng-click="home.status.logout()">
+  <button ng-click="home.logout()">
   Logout
 </button>
 
