@@ -1,0 +1,13 @@
+<ul class="list-group">
+  <li class="list-group-item clearfix task" ng-repeat="tod in home.todos| filter: home.statusFilter" ng-class="{disabled: tod.completed}">
+    <p class="lead">{{tod.title }} {{tod.email}} {{tod.completed}}</p>
+    <div>
+      <span class="pull-right">
+      <button class="btn btn-primary btn-xs" ng-show="!tod.completed && tod.email === home.email"><span class="glyphicon glyphicon-ok" 
+								ng-click="home.finishTask(tod)"></span></button>
+      <button class="btn btn-danger btn-xs" ng-show="tod.email === home.email" ng-click="home.removeTask(tod)">
+        <span class="glyphicon glyphicon-remove"></span></button>
+      </span>
+    </div>
+  </li>
+</ul>

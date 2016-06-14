@@ -1,6 +1,7 @@
 export default class HomeController {
 
     constructor(HomeService, $scope, $stateParams) {
+
         this.filterAttribute = $stateParams.filter;
         this.HomeService = HomeService;
         this.title = '';
@@ -8,6 +9,7 @@ export default class HomeController {
         this.status = this.email !== '' && this.email !== null ? 'Zalogowany' : 'Wylogowany'
         this.email = HomeService.getEmailFromLocalStorage();
         $scope.$on('$stateChangeSuccess', this.filterTasks.bind(this));
+        this.statusFilter = '';
     }
 
     login() {
